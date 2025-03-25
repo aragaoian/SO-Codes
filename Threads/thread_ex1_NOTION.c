@@ -1,4 +1,4 @@
-/* Desenvolver uma aplicação de leia uma entrada do teclado, some com uma constante e imprima 
+/*1. Desenvolver uma aplicação de leia uma entrada do teclado, some com uma constante e imprima 
 na tela o dado resultante da soma. Divida as tarefas em threads usando a biblioteca pthread (preferencialmente).*/
 
 // Compilar => gcc -o thread_ex1_NOTION thread_ex1_NOTION.c -lpthread
