@@ -18,7 +18,8 @@ Com o vetor preenchido, eles devem gerar uma soma e um produto (resultado de uma
 int vetor[10] = {0};
 int resultado_soma = 0;
 int resultado_mul = 1;
-int parte = 0;
+int parte_soma = 0;
+int parte_mul = 0;
 
 void* inputValor(void* param){
     for(int i = 0; i < 10; i++){
@@ -29,7 +30,7 @@ void* inputValor(void* param){
 
 void* soma(void* param){
 
-    int tid = parte++;
+    int tid = parte_soma++;
     int start = tid * (TAM / MAX_THREAD);
     int stop = (tid + 1) * (TAM / MAX_THREAD);
 
@@ -42,8 +43,7 @@ void* soma(void* param){
 
 void* multiplicacao(void* param){
     
-    parte = 0;
-    int tid = parte++;
+    int tid = parte_mul++;
     int start = tid * (TAM / MAX_THREAD);
     int stop = (tid + 1) * (TAM / MAX_THREAD);
 

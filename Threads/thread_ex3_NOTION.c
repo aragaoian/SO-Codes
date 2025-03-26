@@ -6,7 +6,7 @@ da variável global chegar a 100. Ao fim, você consegue observar qual condiçã
     a. Todas as threads tem o mesmo valor na variável interna?
         R: Sim
     b. O print da variável global segue um incremento linear?
-        R 1.: Sim
+        R 1.: Não
         R 2.: Ela nunca é impressa, pois ocorre uma condição de corrida  (race condition),
            onde as threads modificam uma mesma varíavel, mas sem sincronizar. Dessa forma,
            a contagem da variável global nunca é confiável.
@@ -30,8 +30,8 @@ void* sensor (void* param) {
         global++;
         local++;
         sleep(1); // Delay 1 seg
-        printf("Variável Local na thread %ld: %d\n", (long)param, local);
-
+        printf("Variável Local na thread %ld: %d | Global: %d\n", (long)param, local, global);
+        
         // 2. Jeito errado
         // global++;
         // sleep(1); // Delay 1 seg
